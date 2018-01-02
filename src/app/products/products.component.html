@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="products row">
+    <div *ngFor="let product of products" class="col-md-4 text-center">
+      <a class="product" routerLink="product/{{product._id}}">
+        <img src="{{ product.imageUrl }}" />
+        <p class="product-name">{{ product.name }}</p>
+      </a>
+
+      <button class="snipcart-add-item btn btn-info"
+        attr.data-item-name="{{ product.name }}"
+        attr.data-item-id="{{ product._id }}"
+        attr.data-item-image="{{ product.imageUrl }}"
+        attr.data-item-price="{{ product.price }}"
+        attr.data-item-description="{{ product.description }}"
+        data-item-url='https://wt-4b2a879e3bb5c630d65bc12c99321764-0.run.webtask.io/sanity-parser'>
+        Buy it for {{ product.price }}$
+      </button>
+
+    </div>
+  </div>
+</div>
